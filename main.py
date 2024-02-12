@@ -4,7 +4,7 @@ from matplotlib import cm
 
 
 temperature=296
-n=999
+n=5
 main_diag = np.eye(n) * -2
 upper_diag = np.eye(n, k=1)
 lower_diag = np.eye(n, k=-1)
@@ -29,7 +29,7 @@ norm = plt.Normalize(x.min(), x.max())
 colors = cm.plasma(norm(x))
 fig, ax = plt.subplots()  # Create a new figure and axes
 plt.scatter(range(n), x, color=colors, s=10)
-plt.xlabel('Temps')
+plt.xlabel('Distance')
 plt.ylabel('Temperature')
 plt.title('Temperature Distribution')
 cbar = plt.colorbar(cm.ScalarMappable(norm=norm, cmap=cm.plasma), ax=ax)  # Specify the axes for the Colorbar
