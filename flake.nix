@@ -14,7 +14,7 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ python311 virtualenv ] ++
-            (with pkgs.python311Packages; [ pip ]);
+            (with pkgs.python311Packages; [ pip numpy sphinx ]);
         };
       });
     };
