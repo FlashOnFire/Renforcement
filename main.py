@@ -1,13 +1,18 @@
 import numpy as np
 
-mat = np.array([[1, 0, 0, 0, 0, 0, 0],
-                [1, -2, 1, 0, 0, 0, 0],
-                [0, 1, -2, 1, 0, 0, 0],
-                [0, 0, 1, -2, 1, 0, 0],
-                [0, 0, 0, 1, -2, 1, 0],
-                [0, 0, 0, 0, 1, -2, 1],
-                [0, 0, 0, 0, 0, 0, 1], ])
-left = np.array([[296], [0], [0], [0], [0], [0], [0]])
+n=9999
+main_diag = np.eye(n) * -2
+upper_diag = np.eye(n, k=1)
+lower_diag = np.eye(n, k=-1)
+mat = main_diag + upper_diag + lower_diag
+mat[0] = [1]+[0] * (n-1)
+mat[n-1] = [0] * (n-1) + [1]
+print(mat)
+               
+
+left = np.array([[296 if i == 0 else 0 for i in range(n)]]).transpose()
+
+print(left)
 x = np.linalg.solve(mat, left)
 
 print("x = ")
