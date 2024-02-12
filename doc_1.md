@@ -15,7 +15,9 @@ On peut déduire que sous forme matriciel cela s'écrit : $((296),(0),(vdots),(0
 Il ne nous reste plus qu'à résoudre le système matriciel à l'aide de python.
 On peut également simplement choisir la présision de notre résolution en choisissant la valeur de n.
 
-On obtient donc la courbe : 
+On obtient donc la courbe : ![](Figure_1.png)
+
+
 
 
 
