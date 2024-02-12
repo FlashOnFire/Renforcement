@@ -1,5 +1,7 @@
 import numpy as np
 from matplotlib import pyplot as plt
+from matplotlib import cm
+
 
 temperature=296
 n=999
@@ -20,10 +22,19 @@ x = np.linalg.solve(mat, left)
 print("x = ")
 print(x, end="\n\n")
 
-plt.plot(x)
+# Normalize the temperatures to the range [0, 1]
+norm = plt.Normalize(x.min(), x.max())
+
+# Create a color map for the temperatures
+colors = cm.plasma(norm(x))
+fig, ax = plt.subplots()  # Create a new figure and axes
+plt.scatter(range(n), x, color=colors, s=10)
 plt.xlabel('Temps')
 plt.ylabel('Temperature')
 plt.title('Temperature Distribution')
+cbar = plt.colorbar(cm.ScalarMappable(norm=norm, cmap=cm.plasma), ax=ax)  # Specify the axes for the Colorbar
+cbar.set_label('Temperature')
+
 plt.show()
 
 # print("ax = ")
