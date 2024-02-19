@@ -21,6 +21,6 @@ On obtient donc la courbe : ![](Figure_1.png)
 Conditions limites :
 
 On obtient bien $T_0 = 296.0$ (température initiale)
-et T_n = 0
+et $T_n = 0$
 
 Les conditions aux limites sont donc bien respectées
