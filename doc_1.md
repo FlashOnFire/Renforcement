@@ -18,11 +18,9 @@ On peut également simplement choisir la présision de notre résolution en choi
 On obtient donc la courbe : ![](Figure_1.png)
 
 
+Conditions limites :
 
+On obtient bien $T_0 = 296.0$ (température initiale)
+et T_n = 0
 
-
-
-CONDITION LIMITE
-
-
-
+Les conditions aux limites sont donc bien respectées
