@@ -4,14 +4,14 @@
 
 On est parti de l'équation de la chaleur : $(delphi)/(delt)+grad*(phiV)=S$
 
-### méthode analytique
+### Méthode analytique
 
 On a d'abord supprimé un certain nombre de variables.
 Tout d'abord, on a considéré que l'objet ne bouge pas, mais également qu'il est uniforme.
 On a par ailleurs supposé qu'aucune source de chaleur active n'existe.
 Cela permet donc de simplifier la formule grâce à la méthode numérique.
 
-### méthode numérique
+### Méthode numérique
 
 Au précedent cours, on avais simplifié l'équation de la chaleur par : $(d^2T)/(dx^2)=0$
 On sait que $(dT)/(dx)=lim_(xtoa)(T(x+a)-T(a))/(x-a)=lim_(xto)(T(x)-T(a))/(Deltax)$
