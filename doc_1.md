@@ -1,4 +1,4 @@
-# Compte rendu Calderon-Déchelette
+# Compte rendu Guillaume Calderon - Eymeric Déchelette
 
 ## Détermination de la formule
 
