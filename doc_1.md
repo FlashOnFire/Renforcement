@@ -26,7 +26,14 @@ On peut déduire que sous forme matricielle cela s'écrit : $((296),(0),(vdots),
 Il ne nous reste plus qu'à résoudre le système matriciel à l'aide de python.
 On peut également simplement choisir la présision de notre résolution en choisissant la valeur de n.
 
-On obtient finalement la courbe : ![](Figure_1.png)
+On obtient finalement la courbe : 
+```{=latex}
+\begin{center}
+```
+![](Figure_1.png){width=60%}
+```{=latex}
+\end{center}
+```
 
 
 ## Conditions limites :
