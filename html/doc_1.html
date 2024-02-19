@@ -207,28 +207,27 @@
 <body>
         <h1 id="compte-rendu-guillaume-calderon---eymeric-déchelette">Compte rendu Guillaume Calderon - Eymeric Déchelette</h1>
         <h2 id="détermination-de-la-formule">Détermination de la formule</h2>
-        <p>On est parti de l’équation de la chaleur : <span class="math inline">\(\frac{{\partial\phi}}{{\partial{t}}}+\nabla\cdot{\left(\phi{V}\right)}={S}\)</span></p>
+        <p>Nous sommes partis de l’équation de la chaleur : <span class="math inline">\(\frac{{\partial\phi}}{{\partial{t}}}+\nabla\cdot{\left(\phi{V}\right)}={S}\)</span></p>
         <h3 id="méthode-analytique">Méthode analytique</h3>
-        <p>On a d’abord supprimé un certain nombre de variables.<br />
-        Tout d’abord, on a considéré que l’objet ne bouge pas, mais également qu’il est uniforme.<br />
-        On a par ailleurs supposé qu’aucune source de chaleur active n’existe.<br />
-        Cela permet donc de simplifier la formule grâce à la méthode numérique.</p>
+        <p>Nous avons commencé par simplifier l’expression :<br />
+        Tout d’abord, nous avons considéré que l’objet ne bougeait pas, et également qu’il était uniforme.<br />
+        Nous avons ensuite supposé qu’aucune source de chaleur active n’existait.</p>
         <h3 id="méthode-numérique">Méthode numérique</h3>
-        <p>Au précedent cours, on avais simplifié l’équation de la chaleur par : <span class="math inline">\(\frac{{{d}^{{2}}{T}}}{{{\left.{d}{x}\right.}^{{2}}}}={0}\)</span><br />
+        <p>Au précedent cours, nous avions simplifié l’équation de la chaleur par : <span class="math inline">\(\frac{{{d}^{{2}}{T}}}{{{\left.{d}{x}\right.}^{{2}}}}={0}\)</span><br />
         On sait que <span class="math inline">\(\frac{{{d}{T}}}{{{\left.{d}{x}\right.}}}=\lim_{{{x}\to{a}}}\frac{{{T}{\left({x}+{a}\right)}-{T}{\left({a}\right)}}}{{{x}-{a}}}=\lim_{{{x}\to}}\frac{{{T}{\left({x}\right)}-{T}{\left({a}\right)}}}{{\Delta{x}}}\)</span><br />
-        On en déduit donc : <span class="math inline">\(\frac{{{d}^{{2}}{T}}}{{{\left.{d}{x}\right.}^{{2}}}}=\lim_{{{x}\to{0}}}{\left(\lim_{{{x}\to{0}}}\frac{{{T}_{{{j}+{1}}}-{T}_{{j}}}}{{\Delta{x}}}\right)}\frac{{{T}_{{j}}-{T}_{{{j}-{1}}}}}{{\Delta{x}}}\)</span><br />
+        Nous obtenons donc : <span class="math inline">\(\frac{{{d}^{{2}}{T}}}{{{\left.{d}{x}\right.}^{{2}}}}=\lim_{{{x}\to{0}}}{\left(\lim_{{{x}\to{0}}}\frac{{{T}_{{{j}+{1}}}-{T}_{{j}}}}{{\Delta{x}}}\right)}\frac{{{T}_{{j}}-{T}_{{{j}-{1}}}}}{{\Delta{x}}}\)</span><br />
         Ainsi : <span class="math inline">\(\frac{{{d}^{{2}}{T}}}{{{\left.{d}{x}\right.}^{{2}}}}=\lim_{{{x}\to{0}}}\frac{{{T}_{{{j}-{1}}}-{2}{T}_{{j}}+{T}_{{{j}+{1}}}}}{{\left(\Delta{x}\right)}^{{2}}}={0}\)</span></p>
         <h2 id="détermination-de-la-matrice">Détermination de la matrice</h2>
         <p>Avec la formule précente : <span class="math inline">\(\frac{{{d}^{{2}}{T}}}{{{\left.{d}{x}\right.}^{{2}}}}=\lim_{{{x}\to{0}}}\frac{{{T}_{{{j}-{1}}}-{2}{T}_{{j}}+{T}_{{{j}+{1}}}}}{{\left(\Delta{x}\right)}^{{2}}}={0}\)</span>,<br />
         On peut déduire que sous forme matricielle cela s’écrit : <span class="math inline">\({\left(\begin{array}{c} {296}\\{0}\\\vdots\\{0}\end{array}\right)}={\left(\begin{array}{ccccc} {1}&amp;{0}&amp;{0}&amp;\ldots&amp;{0}\\{1}&amp;-{2}&amp;{1}&amp;\ddots&amp;\vdots\\{0}&amp;\ddots&amp;\ddots&amp;\ddots&amp;\ddots\\\vdots&amp;\ddots&amp;{1}&amp;-{2}&amp;{1}\\{0}&amp;\ldots&amp;{0}&amp;{0}&amp;{1}\end{array}\right)}{\left(\begin{array}{c} {T}_{{0}}\\\vdots\\{T}_{{n}}\end{array}\right)}\)</span></p>
         <p>Il ne nous reste plus qu’à résoudre le système matriciel à l’aide de python.<br />
         On peut également simplement choisir la présision de notre résolution en choisissant la valeur de n.</p>
-        <p>On obtient finalement la courbe :</p>
+        <p>Après simulation numérique, on obtient la courbe :</p>
         <p><img src="Figure_1.png" style="width:60.0%" /></p>
         <h2 id="conditions-limites">Conditions limites :</h2>
-        <p>On obtient bien <span class="math inline">\({T}_{{0}}={296.0}\)</span> (température initiale)<br />
+        <p>Nous obtenons bien <span class="math inline">\({T}_{{0}}={296.0}\)</span> (température initiale)<br />
         et <span class="math inline">\({T}_{{n}}={0}\)</span></p>
-        <p>Les conditions aux limites sont donc bien respectées</p>
+        <p>Les conditions aux limites sont donc respectées</p>
   </body>
 
 </html>
