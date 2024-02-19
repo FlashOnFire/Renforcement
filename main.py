@@ -29,8 +29,8 @@ norm = plt.Normalize(x.min(), x.max())
 colors = cm.plasma(norm(x))
 fig, ax = plt.subplots()  # Create a new figure and axes
 plt.scatter(range(n), x, color=colors, s=10)
-plt.xlabel('Distance')
-plt.ylabel('Temperature')
+plt.xlabel('Distance (mètres)')
+plt.ylabel('Temperature (Kelvin)')
 plt.title('Temperature Distribution')
 cbar = plt.colorbar(cm.ScalarMappable(norm=norm, cmap=cm.plasma), ax=ax)  # Specify the axes for the Colorbar
 cbar.set_label('Temperature')
