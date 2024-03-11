@@ -215,6 +215,32 @@
         <span class="math inline">\({T}{\left({x}={0},{t}\right)}={0}\)</span><br />
         <span class="math inline">\({T}{\left({x}={L},{t}\right)}={0}\)</span><br />
         <span class="math inline">\({T}{\left({x},{t}={0}\right)}={4}{x}{\left({3}-{x}\right)}\)</span></p>
+        <h2 id="équation-discrétisée">Équation discrétisée</h2>
+        <p><span class="math inline">\(\lim_{{∆{t}→{0}}}\frac{{⁡{T}^{{{n}+{1}}}_{j}-{T}^{{n}}_{j}}}{\Delta}{t}=\lim_{{{\left(\Delta{x}\right)}^{{2}}→{0}}}⁡{D}\frac{{{T}^{{n}}_{\left({j}+{1}\right)}-{2}{T}^{{n}}_{j}+{T}^{{n}}_{\left({j}-{1}\right)}}}{{{\left(\Delta{x}\right)}^{{2}}}}\)</span><br />
+        <span class="math inline">\(\frac{{⁡{T}^{{{n}+{1}}}_{j}-{T}^{{n}}_{j}}}{\Delta}{t}={D}\frac{{{T}^{{n}}_{\left({j}+{1}\right)}-{2}{T}^{{n}}_{j}+{T}^{{n}}_{\left({j}-{1}\right)}}}{{{\left(\Delta{x}\right)}^{{2}}}}\)</span><br />
+        <span class="math inline">\(\frac{{⁡{T}^{{{n}+{1}}}_{j}}}{\Delta}{t}={D}\cdot\frac{{{T}^{{n}}_{\left({j}+{1}\right)}-{2}{T}^{{n}}_{j}+{T}^{{n}}_{\left({j}-{1}\right)}}}{{{\left(∆{x}\right)}^{{2}}}}+\frac{{{T}^{{n}}_{j}}}{{\Delta{t}}}\)</span><br />
+        <span class="math inline">\(⁡{T}^{{{n}+{1}}}_{j}={D}\cdot\frac{{{T}^{{n}}_{\left({j}+{1}\right)}-{2}{T}^{{n}}_{j}+{T}^{{n}}_{\left({j}-{1}\right)}}}{{{\left(∆{x}\right)}^{{2}}}}+{T}^{{n}}_{j}\)</span></p>
+        <p><img src="schema_1d_instationnaire.png" style="width:40.0%" /></p>
+        <p>Nous avons employé la bibliothèque matplotlib en Python pour créer une représentation du système.</p>
+        <h2 id="résultats">résultats</h2>
+        <p>On peut donc grâce à cette simulation calculer des valeurs :</p>
+        <p><img src="3_courbes.png" style="width:40.0%" /></p>
+        <p>(Discrétisation de temps = 10 000 et de distance de 150)</p>
+        <p>On peut ensuite générer sur un grand nombre de valeurs:</p>
+        <p><img src="" style="width:40.0%" /></p>
+        <p>Nous avons sélectionné une discrétisation de 15 points en x et de 50 intervalles de temps, pour t allant de 0 à 1 seconde.</p>
+        <h2 id="interpretation-et-conditions-limites">interpretation et conditions limites</h2>
+        <p>Le rapport maximum de notre systeme est de <span class="math inline">\({0.5}\)</span> pour <span class="math inline">\(\frac{{{\left.{d}{t}\right.}}}{{\left({\left.{d}{x}\right.}\right)}^{{2}}}\)</span> avec une diffusivité <span class="math inline">\({1}\)</span><br />
+        On vois que la chaleur diminue plutot rapidement au debut puis le vitesse diminution est de plus en plus petite au cour du temps.<br />
+        De plus, nous remarquons que la valeur maximale de chaleur demeure constamment localisée au centre du système.</p>
+        <h2 id="on-comprend-pas-mais-tkt">on comprend pas mais tkt</h2>
+        <p>Pour assurer une précision adéquate, il est essentiel de discrétiser à la fois dans le temps et dans l’espace de manière proportionnelle. Sinon, des écarts significatifs entre les différentes simulations peuvent se produire, entraînant des imprécisions considérables.<br />
+        Nous avons ainsi déterminé numériquement qu’avec une valeur donnée de <span class="math inline">\({N}_{{x}}\)</span>, le nombre de pas de temps <span class="math inline">\({N}_{{t}}\)</span> doit être supérieur à environ <span class="math inline">\({0.222}\)</span> fois <span class="math inline">\({N}_{{x}}\)</span> (environ deux neuvièmes de <span class="math inline">\({N}_{{x}}\)</span>) pour obtenir des résultats satisfaisants.</p>
+        <p>Cas limite : <span class="math inline">\({N}_{{t}}={0.222}\cdot{{N}_{{x}}^{{2}}}\)</span></p>
+        <p>Lorsque nous examinons les deltas, nous obtenons l’inégalité suivante :</p>
+        <p><span class="math inline">\( \frac{T_{\text{fin}}}{L} \left( \frac{\Delta t}{\Delta x^2} \right) &lt; 0.5 \Rightarrow \frac{N_t}{N_x} \left( \frac{\Delta x}{\Delta x^2} \right) &lt; 0.5\)</span><br />
+        Cette inégalité nous indique que pour obtenir une simulation stable, le rapport entre le nombre de pas de temps ( N_t ) et le nombre de pas d’espace ( N_x ), multiplié par le rapport entre le pas d’espace ( x ) et son carré, doit être inférieur à 0.5.</p>
+        <p><img src="" style="width:40.0%" /></p>
   </body>
 
 </html>

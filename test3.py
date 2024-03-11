@@ -8,7 +8,7 @@ Tl = 0
 T0 = 296
 L = 3
 precDist = 50
-precT = 10000
+precT = int(0.22*precDist)
 D = 1
 temps = 1
 
@@ -36,7 +36,7 @@ x = np.linspace(0, L, precDist + 1)
 
 print("Matrice initial : ", Tj)
 resultat = matriceInit(Tj)  # Initialize the matrix with Tj
-desired_times = [0, 0.01, 0.1]
+desired_times = []
 desired_plot = []
 times = []
 
@@ -46,7 +46,7 @@ fig, ax = plt.subplots()
 
 for i in range(precT):
     current_time = i * deltaT
-    if current_time in desired_times or True:
+    if current_time in desired_times:
         print("Iteration ", i + 1, " : ", resultat)
         times.append(current_time)
         desired_plot.append(resultat)
@@ -90,6 +90,6 @@ sm.set_array([])  # You might need this for older matplotlib versions
 cbar = plt.colorbar(sm, ax=ax)
 cbar.set_label('Température (en K)')
 
-plt.legend(['t = 0', 't = 0.01', 't = 0.1', 't = 1'])
+#plt.legend(['t = 0', 't = 0.01', 't = 0.1', 't = 1'])
 
 plt.show()
