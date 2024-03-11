@@ -15,10 +15,10 @@ $T(x,t=0)=4x(3-x)$
 
 ## Équation discrétisée
 
-$lim_(∆t→0)(⁡T^(n+1)_j-T^n_j)/Deltat=lim_((Deltax)^2→0)⁡D(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((Deltax)^2)$
-$(⁡T^(n+1)_j-T^n_j)/Deltat=D(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((Deltax)^2)$
-$(⁡T^(n+1)_j)/Deltat=D*(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((∆x)^2)+ (T^n_j)/(Deltat)$
-$⁡T^(n+1)_j=D*(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((∆x)^2)+ T^n_j$
+$lim_(Deltat→0)(T^(n+1)_j-T^n_j)/Deltat=lim_((Deltax)^2→0)D(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((Deltax)^2)$
+$(T^(n+1)_j-T^n_j)/Deltat=D(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((Deltax)^2)$
+$(T^(n+1)_j)/Deltat=D*(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((Deltax)^2)+ (T^n_j)/(Deltat)$
+$T^(n+1)_j=D*(T^n_(j+1)-2 T^n_j+ T^n_(j-1))/((Deltax)^2)+ T^n_j$
 
 
 ```{=latex}
@@ -73,7 +73,7 @@ Cas limite : $N_t = 0.222 * N_x^2$
 Lorsque nous examinons les deltas, nous obtenons l'inégalité suivante :
 
 $:l \frac{T_{\text{fin}}}{L} \left( \frac{\Delta t}{\Delta x^2} \right) < 0.5 \Rightarrow \frac{N_t}{N_x} \left( \frac{\Delta x}{\Delta x^2} \right) < 0.5$
-Cette inégalité nous indique que pour obtenir une simulation stable, le rapport entre le nombre de pas de temps \( N_t \) et le nombre de pas d'espace \( N_x \), multiplié par le rapport entre le pas d'espace \( \Delta x \) et son carré, doit être inférieur à 0.5.
+Cette inégalité nous indique que pour obtenir une simulation stable, le rapport entre le nombre de pas de temps $N_t$ et le nombre de pas d'espace $N_x$, multiplié par le rapport entre le pas d'espace $Delta x$ et son carré, doit être inférieur à 0.5.
 
 ```{=latex}
 \begin{center}
