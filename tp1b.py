@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import cm
 
-temperature = 296
+temperature = 296.0
 distance = 3
 n = 50
 # (4x*(3-x)*296)
@@ -14,20 +14,27 @@ mat[0] = [1] + [0] * (n - 1)
 mat[n - 1] = [0] * (n - 1) + [1]
 print(mat)
 
-left = np.array([[4*x*(3-x)*temperature for x in range(n)]]).transpose()
+left_array = [0.1 * (1 / 1000)*4 * (x * (3 / n)) * (3 - (x * (3 / n))) * temperature for x in range(n)]
+arrays = [left_array]
 
-print(left)
-x = (np.linalg.solve(mat, left))
+for i in range(10):
+    left_array = np.linalg.solve(mat, left_array)
+    left_array = [0.1*x for x in left_array]
+    # left_array = [0.1*4*(x*(3/(n-1)))*(3-(x*(3/(n-1)))) for x in left_array]
+    arrays.append(left_array)
 
-
-
-# Normalize the temperatures to the range [0, 1]
-norm = plt.Normalize(x.min(), x.max())
+arrays = [np.array(x, dtype=np.float64) for x in arrays]
 
 # Create a color map for the temperatures
-colors = cm.plasma(norm(x))
 fig, ax = plt.subplots()  # Create a new figure and axes
+
+i = 3
+
+x = arrays[i]
+norm = plt.Normalize(x.min(), x.max())
+colors = cm.plasma(norm(x))
 plt.scatter(np.linspace(0, distance, n), x, color=colors, s=10)
+
 plt.xlabel('Distance (mètres)')
 plt.ylabel('Temperature (Kelvin)')
 plt.title('Temperature Distribution')
