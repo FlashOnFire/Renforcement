@@ -12,7 +12,7 @@ from mpl_toolkits.mplot3d import axes3d
 
 j = np.linspace(0, 3, 6)
 n = np.linspace(0, 3, 6)
-Nx = 10
+Nx = 100
 v = np.linspace(0, 3, Nx + 1)
 dx = 3 / Nx
 dt = 1 / (10 * Nx)
