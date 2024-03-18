@@ -8,7 +8,7 @@ Tl = 0
 T0 = 296
 L = 3
 precDist = 50
-precT = int(0.22*precDist)
+precT = int(12*precDist)
 D = 1
 temps = 1
 
